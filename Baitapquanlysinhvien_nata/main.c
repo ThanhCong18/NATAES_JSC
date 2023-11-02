@@ -35,11 +35,12 @@ sv_info_t NhapSv(int index)
     sv.diemtb = (sv.diemtoan + sv.diemvan + sv.diemanh)/3;  // tính tổng điểm trung bình của các sinh viên 
     return sv ;
 }
+// hàm in thông tin của một sinh viên .
 void InSV(sv_info_t sv)
 {
     printf("%-10d%-10s%-10s%-10s%-10d%-15s%-10.2f%-10.2f%-10.2f%-10.2f\n" , sv.msv , sv.Ho , sv.dem , sv.ten , sv.tuoi , sv.gioitinh , sv.diemtoan , sv.diemvan , sv.diemanh , sv.diemtb);
 }
-// hàm in thông tin sinh viên , khi sinh viên được lưu trữ trong 1 mảng quản lý sinh viên , gọi đến hàm này sẽ được in ra .
+// hàm in thông tin của tất cả sinh viên .
 void InallSv( sv_info_t *sv , int num )
 {
     printf("------------------------------------\n");
@@ -55,7 +56,7 @@ void sapxepSV(sv_info_t *sv , int num , char *option)
 {
     sv_info_t sv_clone[100];   // tạo ra 1 mảng mới khác với mảng sv_arr[100];
     memcpy(sv_clone , sv , num*sizeof(sv_info_t)); // copy cac phan tu sang mang sv clone .
-    if(strstr(option,"diemtb"))
+    if(strstr(option,"diemtb")) // hàm strstr có chức năng tìm kiếm chuỗi "diemtb" trong đích option được nhập từ bàn phím , nếu có thì thực hiện chương trình . 
     {                                                     
         for ( int i = 0 ; i < num ; i++)  // sử dụng thuật toán selection sort để sắp xếp theo thứ tứ tăng dần của điểm TB .
         {

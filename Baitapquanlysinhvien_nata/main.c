@@ -56,7 +56,7 @@ void sapxepSV(sv_info_t *sv , int num , char *option)
 {
     sv_info_t sv_clone[100];   // tạo ra 1 mảng mới khác với mảng sv_arr[100];
     memcpy(sv_clone , sv , num*sizeof(sv_info_t)); // copy cac phan tu sang mang sv clone .
-    if(strstr(option,"diemtb")) // hàm strstr có chức năng tìm kiếm chuỗi "diemtb" trong đích option được nhập từ bàn phím , nếu có thì thực hiện chương trình . 
+    if(strstr(option,"diemtb")) // hàm strstr có chức năng tìm kiếm chuỗi "diemtb" trong chuỗi đích option được nhập từ bàn phím , nếu có thì thực hiện chương trình . 
     {                                                     
         for ( int i = 0 ; i < num ; i++)  // sử dụng thuật toán selection sort để sắp xếp theo thứ tứ tăng dần của điểm TB .
         {
@@ -77,12 +77,12 @@ void sapxepSV(sv_info_t *sv , int num , char *option)
 int main()
 {
     sv_info_t sv_arr[100] ; // mảng lưu trữ thông tin của tất cả sinh viên .
-    int slsv ; // biến lưu trữ số lượng sinh viên có trong mảng . 
+    int slsv ; // biến lưu trữ số lượng sinh viên có trong mảng sv_arr[]. 
     printf("nhap so sinh vien : ");
     scanf("%d" , &slsv);
     for( int i = 0 ; i < slsv ; i++)
     {
-        sv_arr[i] = NhapSv(i); // thực hiện nhập từng sinh viên vào mảng lưu trữ sv_arr[100];
+        sv_arr[i] = NhapSv(i); // thực hiện nhập từng sinh viên vào mảng lưu trữ sv_arr[100], mỗi sinh viên là 1 phần tử của mảng sv_arr[100] .
     }
     sapxepSV(sv_arr,slsv,"diemtb");
     InallSv(sv_arr,slsv);  

@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<string.h>
+#include <stdlib.h>
 // Bài Tập Quản lý Sinh viên đơn giản - code: Bùi Văn Công .
 // tạo 1 struct lưu biến thông tin sinh viên . 
 typedef struct   
@@ -72,6 +73,7 @@ void sapxepSV(sv_info_t *sv , int num , char *option)
             }
         }
         InallSv(sv_clone,num);  // in ra thông tin sinh viên đã được sắp xếp theo điểm .
+        exit(0);  // ngay lập tức kết thúc chương trình .
     }
 }
 int main()
